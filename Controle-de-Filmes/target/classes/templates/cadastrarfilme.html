@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cadastrar Filme</title>
+    <link rel="stylesheet" type="text/css" href="/cadastroFilme.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Filmes Cadastrados</h2>
+        
+        <div th:if="${msg}" class="alert alert-success" th:text="${msg}"></div>
+        
+        <div class="lista-filmes">
+            <div th:each="filme : ${todosFilmes}" class="filme-card">
+                <img th:src="${filme.URL}" alt="Poster do filme" class="filme-poster">
+                <div class="filme-info">
+                    <h3 th:text="${filme.titulo}"></h3>
+                    <p th:text="${filme.ano}"></p>
+                    <p class="usuario">Adicionado por: <span th:text="${filme.nomeUsuarioQueAdicionou}"></span></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="adicionar-filme">
+            <h3>Adicionar novo filme</h3>
+            <form action="/filmes" method="post">
+                <input type="text" name="titulo" placeholder="Título do filme" required>
+                <input type="text" name="ano" placeholder="Ano de lançamento" required>
+                <input type="url" name="URL" placeholder="URL do poster" required>
+                <button type="submit">Adicionar Filme</button>
+            </form>
+        </div>
+
+        <div class="voltar">
+            <a href="/home">Voltar para a home</a>
+        </div>
+    </div>
+</body>
+</html>

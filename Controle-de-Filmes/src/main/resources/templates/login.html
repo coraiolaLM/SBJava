@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Suas Credenciais, Por favor...</h1>
+        <h2>Login</h2>
+        <form action="/validar" method="post">
+            <table>
+                <tr>
+                    <td><label>Email:</label></td>
+                    <td><input type="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label>Senha:</label></td>
+                    <td><input type="password" name="senha" required></td>
+                </tr>
+            </table>
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p class="error-message" th:text="${msg}"></p>
+        <p>Não tem uma conta? <a href="/cadastro">Cadastre-se</a></p>
+    </div>
+</body>
+</html>

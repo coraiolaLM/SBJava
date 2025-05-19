@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Página Principal</h2>
+        <br>
+        Bem-vindo, <span th:text="${usuarioLogado.nome}"></span>!
+        <br><br>
+        
+		<a href="/cadastrarfilme">Adicionar Filme</a> 
+		<br>
+        <a href="/logout">Sair</a>
+    </div>
+</body>
+</html>

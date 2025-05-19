@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cadastro de Usuário</title>
+    <link rel="stylesheet" type="text/css" href="novoUsr.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Cadastro de Novo Usuário</h1>
+        <div th:if="${erro}" class="alert alert-danger" th:text="${erro}"></div>
+        <div th:if="${msg}" class="alert alert-success" th:text="${msg}"></div>
+        
+        <form action="/cadastrar" method="post">
+            <label>Nome:</label><br>
+            <input type="text" name="nome" required><br><br>
+
+            <label>Login:</label><br>
+            <input type="text" name="login" required><br><br>
+
+            <label>Senha:</label><br>
+            <input type="password" name="senha" required><br><br>
+
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+    </div>
+</body>
+</html>
